@@ -5,3 +5,9 @@
 body{
     background-color: #D5333E;
 }
+
+.animation_one {
+    transition: cubic-bezier(1, 0, 0, 1);
+    transition-duration: 3s;
+    transition-delay: 5s;
+}
