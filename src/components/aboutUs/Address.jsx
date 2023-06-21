@@ -71,7 +71,7 @@ const Address = () => {
           >
             <img
               className=" min-[1024px]:group-hover:scale-[1.15] transition duration-1000 object-cover object-center w-full h-full"
-              src="https://shorturl.at/hksM9"
+              src="https://images.unsplash.com/flagged/photo-1562503542-2a1e6f03b16b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2luZ2Fwb3JlfGVufDB8fDB8fHww&w=1000&q=80"
               alt=""
             />
             <div
@@ -121,7 +121,7 @@ const Address = () => {
           >
             <img
               className=" min-[1024px]:group-hover:scale-[1.15] transition duration-1000 object-cover object-center w-full h-full"
-              src="https://shorturl.at/mqs23"
+              src="https://cdn.britannica.com/40/194240-050-C1ED1F29/Buddhist-temples-Pagan-Myanmar.jpg"
               alt=""
             />
             <div
@@ -173,7 +173,7 @@ const Address = () => {
           >
             <img
               className=" min-[1024px]:group-hover:scale-[1.15] transition duration-1000 object-cover object-center w-full h-full"
-              src="https://shorturl.at/jK378"
+              src="https://i.natgeofe.com/k/d2701667-c426-4a1b-8d75-d01bdc387fdc/vietnam-ha-long-bay_16x9.jpg?w=1200"
               alt=""
             />
             <div

@@ -16,7 +16,12 @@ const Services = () => {
     <div className="flex justify-center bg-white">
       <div className=" w-[90%] sm:w-[60%] flex flex-col my-32">
         {/* hero section  */}
-        <div className="flex flex-col gap-7">
+        <motion.div
+          initial={{ y: 100, opacity: "0%" }}
+          animate={{ y: 0, opacity: "100%" }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col gap-7"
+        >
           <div>
             <h1 className="text-[70px] font-bold ">We build digital</h1>
             <h1 className="text-[70px] font-bold  text-red-500">
@@ -33,7 +38,7 @@ const Services = () => {
               transcend mediums and touchpoints.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* service section  */}
         <div className="flex flex-col sm:overflow-visible overflow-hidden py-10 justify-center items-center sm:flex-row sm:flex-wrap">

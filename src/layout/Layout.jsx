@@ -9,7 +9,7 @@ const Layout = () => {
 
     <div className=' max-w-[100vw] overflow-hidden'>
       <Nav active={active} isActive={isActive} />
-      <div className={`${active ? "hidden" : "block"}`}>
+      <div className={`bg-white ${active ? "hidden" : "block"}`}>
         <Outlet />
       </div>
       <div className={`${active ? "hidden" : "block"}`}>

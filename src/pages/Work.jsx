@@ -12,7 +12,7 @@ const Work = () => {
   );
 
   return (
-    <div className={`text-white`}>
+    <div className={``}>
       {/* Heading */}
       <motion.div
         initial={{ y: 100, opacity: "0%" }}
@@ -33,7 +33,7 @@ const Work = () => {
                 key={item.id}
                 onClick={() => setActive(item.id)}
                 className={`p-2 cursor-pointer flex items-center transition ease-in-out duration-200 ${
-                  active2 === item.id && " font-extrabold"
+                  active2 === item.id && "rgb(213,51,62)  font-extrabold"
                 }`}
               >
                 {active2 === item.id && (
@@ -41,7 +41,7 @@ const Work = () => {
                     animate={{
                       width: "15px",
                       height: "2px",
-                      backgroundColor: "black",
+                      backgroundColor: "rgb(213,51,62)",
                       marginRight: "10px",
                     }}
                     transition={{ duration: 0.3 }}
