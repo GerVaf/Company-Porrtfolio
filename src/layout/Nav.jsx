@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 
 const Nav = ({ active, isActive }) => {
   return (
-    <div className="text-white flex px-10 h-20 py-5 items-center justify-between">
+
+    <div className="text-white flex items-center px-5 sm:px-10 h-20 sm:py-5 sm:items-end justify-between">
       {/* logo don't extract it cuz it's so fucking long */}
       <NavLink className={"flex-1"} to={"/"}>
         <div className=" w-48">
@@ -20,8 +21,13 @@ const Nav = ({ active, isActive }) => {
           </svg>
         </div>
       </NavLink>
-      {/* Route path */}
-      <div className="text-md gap-20 font-mono hidden lg:flex">
+
+
+
+      {/* Route path for Phone*/}
+    
+      {/* Route path for Desktop*/}
+      <div className="text-md hidden sm:flex sm:gap-20 font-mono">
         <NavLink to={"/work"}>Work</NavLink>
         <NavLink to={"/solutions"}>Solutions</NavLink>
         <NavLink to={"/services"}>Services</NavLink>
