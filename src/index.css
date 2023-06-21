@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: #D5333E;
+body {
+  background-color: #d5333e;
 }
 
 .animation_one {
-    transition: cubic-bezier(1, 0, 0, 1);
-    transition-duration: 3s;
-    transition-delay: 5s;
+  transition: cubic-bezier(1, 0, 0, 1);
+  transition-duration: 3s;
+  transition-delay: 5s;
 }
+
