@@ -27,7 +27,7 @@ const Nav = ({ active, isActive }) => {
       {/* Route path for Phone*/}
     
       {/* Route path for Desktop*/}
-      <div className="text-md hidden sm:flex sm:gap-20 font-mono">
+      <div className="text-md hidden lg:flex lg:gap-20 font-mono">
         <NavLink to={"/work"}>Work</NavLink>
         <NavLink to={"/solutions"}>Solutions</NavLink>
         <NavLink to={"/services"}>Services</NavLink>

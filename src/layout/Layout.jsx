@@ -11,7 +11,10 @@ const Layout = () => {
       <div className={`${active ? "hidden" : "block"}`}>
         <Outlet />
       </div>
-      <Foot active={active} isActive={isActive} />
+      <div className={`${active ? "hidden" : "block"}`}>
+        {" "}
+        <Foot />
+      </div>
     </div>
   );
 };
