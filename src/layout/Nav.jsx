@@ -4,12 +4,44 @@ import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const Nav = ({ active, isActive }) => {
-  return (
+import "./Nav.css";
 
+const Nav = () => {
+  const links = [
+    { path: "/work", text: "Work" },
+    { path: "/solutions", text: "Solutions" },
+    { path: "/services", text: "Services" },
+    { path: "/aboutus", text: "About Us" },
+  ];
+
+  const [mouseInside, setMouseInside] = useState(
+    Array(links.length).fill(false)
+  );
+
+  const handleMouseEnter = (index) => {
+    const updatedMouseInside = [...mouseInside];
+    updatedMouseInside[index] = true;
+    setMouseInside(updatedMouseInside);
+  };
+
+  const handleMouseLeave = (index) => {
+    const updatedMouseInside = [...mouseInside];
+    updatedMouseInside[index] = false;
+    setMouseInside(updatedMouseInside);
+  };
+
+
+const Nav = ({ active, isActive }) => {
+
+  return (
+<>
     <div className="text-white flex items-center px-5 sm:px-10 h-20 sm:py-5 sm:items-end justify-between">
       {/* logo don't extract it cuz it's so fucking long */}
+
+ 
+
       <NavLink className={"flex-1"} to={"/"}>
+
         <div className=" w-48">
           <svg viewBox="0 0 127 16">
             <path
@@ -21,19 +53,36 @@ const Nav = ({ active, isActive }) => {
           </svg>
         </div>
       </NavLink>
-
-
-
-      {/* Route path for Phone*/}
-    
-      {/* Route path for Desktop*/}
-      <div className="text-md hidden lg:flex lg:gap-20 font-mono">
-        <NavLink to={"/work"}>Work</NavLink>
-        <NavLink to={"/solutions"}>Solutions</NavLink>
-        <NavLink to={"/services"}>Services</NavLink>
-        <NavLink to={"/aboutus"}>About Us</NavLink>
+      {/* link cate  for Desktop*/}
+      <div className="text-md hidden lg:flex lg:gap-20 h-10 font-mono">
+        {links.map((link, index) => (
+          <NavLink to={link.path} key={index}>
+            <div
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+              className="flex flex-col overflow-hidden"
+            >
+              {link.text}
+              {mouseInside[index] ? (
+                <motion.hr
+                  initial={{ x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="border w-11"
+                />
+              ) : (
+                <motion.hr
+                  animate={{ x: -100 }}
+                  transition={{ duration: 0.5 }}
+                  className="border w-11"
+                />
+              )}
+            </div>
+          </NavLink>
+        ))}
       </div>
-
+      {/* link cate for mobile  */}
+      
+      
       <div
         onClick={() => isActive(true)}
         className="lg:hidden bg-black rounded-full w-10 h-10 flex justify-center items-center cursor-pointer"
@@ -73,7 +122,9 @@ const Nav = ({ active, isActive }) => {
           </motion.div>
         </>
       )}
+
     </div>
+</>
   );
 };
 
