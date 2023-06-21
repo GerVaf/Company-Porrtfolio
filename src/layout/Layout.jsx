@@ -6,7 +6,8 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   const [active, isActive] = useState(false);
   return (
-    <div>
+
+    <div className=' max-w-[100vw] overflow-hidden'>
       <Nav active={active} isActive={isActive} />
       <div className={`${active ? "hidden" : "block"}`}>
         <Outlet />
