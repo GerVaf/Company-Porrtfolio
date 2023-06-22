@@ -10,7 +10,7 @@ const profileCards = [
     name: "Thant Zin Min",
     path: "/profiles/image.webp",
   },
-  { id: 2, color: "blue-400", photo: "/mw.jpg", name: "Min Wai",path: "/profiles/image (1).webp", },
+  { id: 2, color: "blue-400", photo: "/mw.jpg", name: "Min Wei",path: "/profiles/image (1).webp", },
   { id: 3, color: "blue-600", photo: "/wy.jpg", name: "Wai Yan",path: "/profiles/image (2).webp", },
   { id: 4, color: "blue-800", photo: "/whz.jpg", name: "Win Htet Zaw",path: "/profiles/image (3).webp", },
 
