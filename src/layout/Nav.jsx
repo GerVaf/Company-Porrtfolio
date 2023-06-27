@@ -30,7 +30,7 @@ const Nav = ({ active, isActive }) => {
 
   return (
     <>
-      <div className="text-white flex items-center px-5 sm:px-10 h-20 sm:py-5 sm:items-end justify-between">
+      <div className="text-white flex items-center px-5 sm:px-10 h-20 sm:py-5 sm:items-center justify-between">
         {/* logo don't extract it cuz it's so fucking long */}
 
         <NavLink className={"flex-1"} to={"/"}>
@@ -46,7 +46,7 @@ const Nav = ({ active, isActive }) => {
           </div>
         </NavLink>
         {/* link cate  for Desktop*/}
-        <div className="text-md hidden lg:flex lg:gap-20 h-10 font-mono">
+        <div className="text-md hidden items-center lg:flex lg:gap-20 h-10 font-mono">
           {links.map((link, index) => (
             <NavLink to={link.path} key={index}>
               <div
