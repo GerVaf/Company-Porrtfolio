@@ -86,7 +86,7 @@ const Work = () => {
       </motion.div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 animation_one">
+      <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 animation_one ">
         {filterData.map((item) => (
           <motion.div
             initial={{ y: -10, x: 10, opacity: "0%" }}
@@ -112,14 +112,14 @@ const Work = () => {
                   title.map(
                     (title) =>
                       title.id === item && (
-                        <div>
+                        <div className="text-white">
                           {title.id === 1 ? <></> : <h1>{title.name},</h1>}
                         </div>
                       )
                   )
                 )}
               </div>
-              <p className="py-1 font-bold text-lg ">{item.name}</p>
+              <p className="py-1 font-bold text-lg text-white">{item.name}</p>
             </div>
 
             <div className="z-20 absolute bottom-10 left-10 w-fit flex gap-2 py-2 ">
