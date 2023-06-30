@@ -56,16 +56,16 @@ const Service = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center sm:gap-16">
+    <div className="flex flex-col items-center justify-center sm:gap-16 gap-10">
       <h1 className="text-3xl font-bold ">
         What we can do for you or your business
       </h1>
       {/* Service  */}
-      <div className="flex justify-around">
-        <div className="w-5/12 flex flex-col gap-10 items-center justify-center">
+      <div className="flex sm:flex-row flex-col gap-10 sm:justify-around">
+        <div className="sm:w-5/12 flex flex-col gap-10 items-center justify-center">
           {left?.map((el) => {
             return (
-              <div key={el.id} className="flex gap-10">
+              <div key={el.id} className="flex gap-5 sm:gap-10 sm:flex-row flex-col items-center">
                 <div
                   className={` ${el.id === 1 && "bg-[rgb(255,255,101)]"} ${
                     el.id === 2 && "bg-[rgb(179,38,46)]"
@@ -75,7 +75,7 @@ const Service = () => {
                 >
                   <img className="w-[150px]" src={el.img} alt="" />
                 </div>
-                <div className="w-7/12 flex flex-col gap-3">
+                <div className="sm:w-7/12 px-10 sm:px-0 items-center flex flex-col gap-3">
                   <p className="font-bold text-xl">{el.title}</p>
                   <span>{el.text}</span>
                 </div>
@@ -83,10 +83,10 @@ const Service = () => {
             );
           })}
         </div>
-        <div className="w-5/12 flex flex-col gap-10 items-center justify-center">
+        <div className="sm:w-5/12 flex flex-col gap-10 items-center justify-center">
           {right?.map((el) => {
             return (
-              <div key={el.id} className="flex gap-10">
+              <div key={el.id} className="flex gap-10 sm:flex-row flex-col items-center">
                 <div
                   className={` ${el.id === 1 && "bg-[rgb(238,217,220)]"} ${
                     el.id === 2 && "bg-[rgb(25,136,232)]"
@@ -96,7 +96,7 @@ const Service = () => {
                 >
                   <img className="w-[150px]" src={el.img} alt="" />
                 </div>
-                <div className="w-7/12 flex flex-col gap-3">
+                <div className="sm:w-7/12 px-10 sm:px-0 items-center flex flex-col gap-3">
                   <p className="font-bold text-xl">{el.title}</p>
                   <span>{el.text}</span>
                 </div>
