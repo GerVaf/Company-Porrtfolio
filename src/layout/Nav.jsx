@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsX } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 const Nav = ({ active, isActive }) => {
@@ -85,45 +85,53 @@ const Nav = ({ active, isActive }) => {
           <FaBars />
         </div>
 
-        {active && (
-          <>
-            <div className="lg:hidden w-full h-full absolute top-0 left-0 overflow-hidden">
-              <motion.div
-                initial={{ width: "2.5rem", height: "2.5rem" }}
-                animate={
-                  isSmallDevice
-                    ? { scale: 35 }
-                    : isMediumDevice
-                    ? { scale: 40 }
-                    : { scale: 50 }
-                }
-                // exit={!active && { width: "2.5rem", height: "2.5rem" }}
-                transition={{ ease: "easeInOut", duration: 0.5 }}
-                className={`absolute top-5 right-5  bg-[#3C2837]  rounded-full z-30`}
-              ></motion.div>
-            </div>
-            <div className="lg:hidden  absolute top-0 right-0 flex flex-col items-center justify-center w-full h-full z-40 gap-8 text-xl font-bold">
-              <NavLink onClick={() => isActive(false)} to={"/work"}>
-                Work
-              </NavLink>
-              <NavLink onClick={() => isActive(false)} to={"/solutions"}>
-                Solutions
-              </NavLink>
-              <NavLink onClick={() => isActive(false)} to={"/services"}>
-                Services
-              </NavLink>
-              <NavLink onClick={() => isActive(false)} to={"/aboutus"}>
-                About Us
-              </NavLink>
-              <div
-                onClick={() => isActive(false)}
-                className="absolute top-[1.9rem] right-[1.9rem] cursor-pointer"
-              >
-                <BsX />
+        <AnimatePresence>
+          {active && (
+            <>
+              <div className="lg:hidden w-full h-full absolute top-0 left-0 overflow-hidden ">
+                <motion.div
+                  exit={{ width: "0", height: "0", top: "40px", right: "40px" }}
+                  initial={{ width: "2.5rem", height: "2.5rem" }}
+                  animate={
+                    isSmallDevice
+                      ? { scale: 35 }
+                      : isMediumDevice
+                      ? { scale: 40 }
+                      : { scale: 50 }
+                  }
+                  // exit={!active && { width: "2.5rem", height: "2.5rem" }}
+                  transition={{ ease: "easeInOut", duration: 0.5 }}
+                  className={`absolute   bg-[#3C2837] top-5 right-5 rounded-full z-30 
+                  `}
+                ></motion.div>
               </div>
-            </div>
-          </>
-        )}
+              <motion.div
+                exit={{ opacity: 0 }}
+                className="lg:hidden  absolute top-0 right-0 flex flex-col items-center justify-center w-full h-full z-40 gap-8 text-xl font-bold"
+              >
+                <NavLink onClick={() => isActive(false)} to={"/work"}>
+                  Work
+                </NavLink>
+                <NavLink onClick={() => isActive(false)} to={"/solutions"}>
+                  Solutions
+                </NavLink>
+                <NavLink onClick={() => isActive(false)} to={"/services"}>
+                  Services
+                </NavLink>
+                <NavLink onClick={() => isActive(false)} to={"/aboutus"}>
+                  About Us
+                </NavLink>
+                <motion.div
+                  exit={{ opacity: 0 }}
+                  onClick={() => isActive(false)}
+                  className="absolute top-[1.9rem] right-[1.9rem] cursor-pointer"
+                >
+                  <BsX />
+                </motion.div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );
