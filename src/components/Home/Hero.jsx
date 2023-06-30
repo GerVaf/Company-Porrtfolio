@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
-import { motion } from "../../../node_modules/framer-motion";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   // for text animation
@@ -22,10 +22,11 @@ const Hero = () => {
 
     return () => clearInterval(interval);
   }, [textGroups.length]);
+
   return (
-    <div className="flex justify-around">
+    <div className="flex sm:flex-row flex-col items-center my-28 sm:mt-0 sm:justify-around">
       {/* left side  */}
-      <div className=" w-4/12 h-[90vh] text-[180px] font-bold">
+      <div className="sm:w-4/12 w-9/12 sm:h-[90vh] h-[50vh] text-[70px] sm:text-[180px] font-bold">
         <span>We</span>
         <Typewriter
           options={{
@@ -33,15 +34,15 @@ const Hero = () => {
             autoStart: true,
             loop: true,
             cursor: "",
-            delay: 300,
+            delay: 150,
           }}
         />
       </div>
 
       {/* right side  */}
-      <div className=" w-4/12 h-[90vh] flex gap-5 items-end">
+      <div className="sm:w-4/12 w-9/12 sm:h-[90vh] flex gap-5 items-end">
         <div className="flex items-start gap-10">
-          <div className="h-[250px] w-2 border-opacity-30 border border-slate-200 relative overflow-hidden">
+          <div className="h-[250px] hidden sm:block w-2 border-opacity-30 border border-slate-200 relative overflow-hidden">
             <motion.div
               initial={{ y: 0 }}
               animate={{ y: 250 }}
@@ -53,18 +54,19 @@ const Hero = () => {
               }}
             ></motion.div>
           </div>
-          <div className=" text-2xl font-bold ">
+          <div className="text-2xl font-bold">
             {textGroups.map((text, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={
                   index === currentGroupIndex
-                    ? { opacity: 1 }
-                    : { opacity: 0, y: "-20px" }
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: '100px' }
                 }
-                exit={{ opacity: 0, y: "-20px" }}
-                transition={{ duration: 0.2 }}
+                exit={{ opacity: 0, y: '100px' }}
+                transition={{ duration: 0.5 }}
+                style={{ position: "absolute" }}
               >
                 <p>{text}</p>
               </motion.div>

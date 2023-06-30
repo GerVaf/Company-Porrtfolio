@@ -25,34 +25,34 @@ const Feature = () => {
     },
   ];
   return (
-    <div className=" flex justify-center items-center flex-col ">
+    <div className=" flex justify-center items-center flex-col gap-10">
       {featureData?.map((el) => {
         return (
           <div
           key={el.id}
-            className={`flex ${
-              el.id == 2 && " flex-row-reverse"
-            } items-center gap-10 w-[70%] h-[75vh]`}
+            className={`flex sm:flex-row flex-col ${
+              el.id == 2 && " sm:flex-row-reverse"
+            } items-center gap-10 w-[90%] sm:w-[70%] sm:h-[75vh]`}
           >
             {/* img part */}
             <div className="w-6/12">
               <div
-                className={`w-[500px] h-[500px] ${
+                className={`sm:w-[500px] sm:h-[500px] w-[200px] h-[200px] ${
                   el.id == 1 && "bg-[rgb(27,164,85)]"
                 }
                   ${el.id == 2 && "bg-[rgb(245,245,245)]"}
                   ${
                     el.id == 3 && "bg-[rgb(25,70,132)]"
-                  } bg-black flex justify-center items-center rounded-full`}
+                  } flex justify-center items-center rounded-full`}
               >
-                <img className=" w-[450px]" src={el.img} alt="" />
+                <img className=" sm:w-[450px]" src={el.img} alt="" />
               </div>
             </div>
             {/* text part  */}
-            <div className="w-5/12 flex flex-col gap-10">
+            <div className="sm:w-5/12 flex flex-col sm:gap-10">
               <div className="flex flex-col gap-2">
-                <h1 className="text-[45px] font-bold">{el.title}</h1>
-                <h2 className="text-[25px] font-semibold">{el.co_title}</h2>
+                <h1 className="sm:text-[45px] font-bold">{el.title}</h1>
+                <h2 className="sm:text-[25px] font-semibold">{el.co_title}</h2>
               </div>
               <p className=" text-md">{el.text}</p>
             </div>

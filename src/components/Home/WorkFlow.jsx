@@ -158,11 +158,11 @@ const WorkFlow = () => {
 
   const [activeButton, setActiveButton] = useState("UX");
   return (
-    <div className="flex flex-col gap-20 justify-center items-center">
-      <h1 className="text-[45px] font-bold ">The Codigo Process</h1>
-      <div className="w-[70%] flex justify-around">
+    <div className="flex flex-col sm:gap-20 justify-center items-center">
+      <h1 className="sm:text-[45px] text-2xl mb-10 sm:mb-0 font-bold ">The Codigo Process</h1>
+      <div className="w-[90%] gap-10 sm:w-[70%] flex sm:flex-row flex-col-reverse sm:justify-around">
         {/* text side  */}
-        <div className="w-8/12 flex flex-col gap-16">
+        <div className="sm:w-8/12 flex flex-col gap-5 sm:gap-16">
           <AnimatePresence mode="wait">
             {isMounted &&
               active.map((el) => {
@@ -173,21 +173,21 @@ const WorkFlow = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4 }}
-                    className="flex flex-col gap-5"
+                    className="flex flex-col gap-2 sm:gap-5"
                   >
-                    <h1 className="font-bold text-xl">{el.title}</h1>
-                    <p className="text-lg">{el.text}</p>
+                    <h1 className="font-bold text-lg sm:text-xl">{el.title}</h1>
+                    <p className="text-sm sm:text-lg">{el.text}</p>
                   </motion.div>
                 );
               })}
           </AnimatePresence>
         </div>
         {/* Button side */}
-        <div className="w-3/12 flex flex-col gap-5">
+        <div className="sm:w-3/12 flex flex-wrap sm:flex-col gap-5">
           <div className="flex items-center gap-5">
             <button
               onClick={() => handleCategoryClick(UX, "UX")}
-              className={`text-4xl font-bold w-24 h-24 rounded-full ${
+              className={`sm:text-4xl font-bold sm:w-24 sm:h-24 w-16 h-10 rounded-full ${
                 activeButton === "UX"
                   ? "bg-white text-[rgb(213,51,62)]"
                   : " border-2 "
@@ -195,12 +195,12 @@ const WorkFlow = () => {
             >
               UX
             </button>
-            <p className="font-bold text-2xl w-7/12">User Experiences</p>
+            <p className="font-bold sm:text-2xl sm:w-7/12">User Experiences</p>
           </div>
           <div className="flex items-center gap-5">
             <button
               onClick={() => handleCategoryClick(UI, "UI")}
-              className={`text-4xl font-bold w-24 h-24 rounded-full ${
+              className={`sm:text-4xl font-bold sm:w-24 sm:h-24 w-16 h-10 rounded-full ${
                 activeButton === "UI"
                   ? "bg-white text-[rgb(213,51,62)]"
                   : " border-2 "
@@ -208,12 +208,12 @@ const WorkFlow = () => {
             >
               UI
             </button>
-            <p className="font-bold text-2xl w-7/12">Interface Design</p>
+            <p className="font-bold sm:text-2xl sm:w-7/12">Interface Design</p>
           </div>
           <div className="flex items-center gap-5">
             <button
               onClick={() => handleCategoryClick(Mobile, "Mobile")}
-              className={`text-4xl font-bold w-24 h-24 rounded-full ${
+              className={`sm:text-4xl font-bold sm:w-24 sm:h-24 w-16 h-10 rounded-full ${
                 activeButton === "Mobile"
                   ? "bg-white text-[rgb(213,51,62)]"
                   : " border-2 "
@@ -221,12 +221,12 @@ const WorkFlow = () => {
             >
               M
             </button>
-            <p className="font-bold text-2xl w-7/12">Mobile App Development</p>
+            <p className="font-bold sm:text-2xl sm:w-7/12">Mobile App Development</p>
           </div>
           <div className="flex items-center gap-5">
             <button
               onClick={() => handleCategoryClick(Website, "Website")}
-              className={`text-4xl font-bold w-24 h-24 rounded-full ${
+              className={`sm:text-4xl font-bold sm:w-24 sm:h-24 w-16 h-10 rounded-full ${
                 activeButton === "Website"
                   ? "bg-white text-[rgb(213,51,62)]"
                   : " border-2 "
@@ -234,7 +234,7 @@ const WorkFlow = () => {
             >
               W
             </button>
-            <p className="font-bold text-2xl w-7/12">Website Development</p>
+            <p className="font-bold sm:text-2xl sm:w-7/12">Website Development</p>
           </div>
         </div>
       </div>
