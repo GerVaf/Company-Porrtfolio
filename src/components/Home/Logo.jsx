@@ -38,14 +38,14 @@ const Logo = () => {
   return (
     <div className="text-white flex justify-center items-center">
       <div className="w-[70%] flex flex-col gap-16 ">
-        <p className="text-[35px] font-bold flex flex-col justify-center items-center">
+        <p className="sm:text-[35px] text-xl font-bold flex flex-col justify-center items-center">
           Award Winning Mobile App and Web Development Company <span>Based in
           Singapore</span>
         </p>
         {/* Logo */}
-        <div className="flex flex-wrap gap-32 cursor-pointer justify-center">
+        <div className="flex flex-wrap gap-5 sm:gap-32 cursor-pointer justify-center">
           {logo?.map((el) => {
-            return <img className=" w-44" key={el.id} src={el.img} alt="" />;
+            return <img className=" w-28 sm:w-44" key={el.id} src={el.img} alt="" />;
           })}
         </div>
       </div>
